@@ -17,7 +17,7 @@ public:
     explicit Graph(UnMap&& vertices) : vertices {std::move(vertices) }          {}
 
     void addEdge(const string& name1, const string& name2) {
-        addEdgeUtil(vertices.find(name1)->second, name2);
+	vertices.find(name1)->second.addEdge(name2);
     }
 
     size_t countOfVertices() const { return vertices.size(); }
